@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "advent-of-code"
+version = "0.1.0"
+description = ""
+authors = ["Kevin Duff <kevinkelduff@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.11b1"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+pytest-cov = "^3.0.0"
+poethepoet = "^0.11.0"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.poe.tasks]
+autoformat.sequence = [
+    {cmd = "black src tests"},
+    {cmd = "isort src tests"},
+]
+
+lint.sequence = [
+    {cmd = "black --check -v src tests"},
+    {cmd = "isort --check -v src tests"},
+    {cmd = "flake8 src tests"},
+    {cmd = "mypy --pretty src tests"},
+]
+
+[tool.poe.tasks.test]
+sequence = [
+    {shell = "pytest -vv --cov-report=xml --cov=advent_of_code"},
+]
+
+[tool.poe.tasks.run]
+cmd = "python -m advent_of_code.y$year.d$day"
+help = "Run the script for a particular day with the puzzle input"
+
+[tool.poe.tasks.run.args.year]
+help = "Advent of Code year"
+default = "2020"
+options = ["-y", "--year"]
+
+[tool.poe.tasks.run.args.day]
+help = "Puzzle day"
+default = "1"
+options = ["-d", "--day"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
