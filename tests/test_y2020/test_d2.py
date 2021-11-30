@@ -1,4 +1,4 @@
-from advent_of_code.y2020.d2 import is_valid_p1, solve, is_valid_p2
+from advent_of_code.y2020.d2 import is_valid_p1, is_valid_p2, solve
 
 TEST_INPUT = [
     "1-3 a: abcde",
@@ -9,6 +9,7 @@ TEST_INPUT = [
 
 def test_d2_p1():
     assert solve(TEST_INPUT, is_valid_p1) == 2
+
 
 def test_d2_p2():
     assert solve(TEST_INPUT, is_valid_p2) == 1

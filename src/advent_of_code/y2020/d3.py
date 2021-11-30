@@ -36,6 +36,7 @@ def scan_slopes(lines: List[str]):
 
     return prod
 
+
 if __name__ == "__main__":
     import os
 

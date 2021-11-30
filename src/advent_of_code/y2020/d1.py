@@ -1,5 +1,5 @@
-from typing import Iterable, List
 from itertools import combinations
+from typing import Iterable, List
 
 
 def mul(items: Iterable[int]) -> int:
@@ -13,6 +13,7 @@ def solve(expense_report: List[int], count: int) -> int:
     for values in combinations(expense_report, count):
         if sum(values) == 2020:
             return mul(values)
+    raise ValueError("No values adding up to 2020 found")
 
 
 if __name__ == "__main__":

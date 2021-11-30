@@ -1,5 +1,5 @@
-
 from typing import Callable, List
+
 
 def is_valid_p1(entry: str) -> bool:
     policy, password = entry.split(": ")
@@ -9,6 +9,7 @@ def is_valid_p1(entry: str) -> bool:
     if low <= password.count(letter) <= high:
         return True
     return False
+
 
 def is_valid_p2(entry: str) -> bool:
     policy, password = entry.split(": ")
