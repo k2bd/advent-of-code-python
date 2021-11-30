@@ -36,7 +36,7 @@ lint.sequence = [
 
 [tool.poe.tasks.test]
 sequence = [
-    {shell = "pytest -vv --cov-report=xml --cov=advent_of_code"},
+    {shell = "pytest -vv --cov=advent_of_code --cov-report term --cov-report xml"},
 ]
 
 [tool.poe.tasks.solve]
