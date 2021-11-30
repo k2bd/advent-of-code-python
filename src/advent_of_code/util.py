@@ -24,7 +24,7 @@ class Timer:
         self.result_seconds = perf_counter() - self._start_time
 
 
-def solution(part: int, solver: Callable[[], Any]) -> str:
+def format_solution(part: int, solver: Callable[[], Any]) -> str:
     """
     Format the solution to a puzzle in a standardized way, with timing info
     """

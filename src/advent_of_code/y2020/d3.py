@@ -1,6 +1,6 @@
 from typing import List
 
-from advent_of_code.util import puzzle_input, solution
+from advent_of_code.util import format_solution, puzzle_input
 
 
 def trees_hit(lines: List[str], right: int, down: int) -> int:
@@ -42,5 +42,5 @@ def scan_slopes(lines: List[str]) -> int:
 if __name__ == "__main__":
     trees_map = puzzle_input(2020, 3)
 
-    print(solution(1, lambda: trees_hit(lines=trees_map, right=3, down=1)))
-    print(solution(2, lambda: scan_slopes(lines=trees_map)))
+    print(format_solution(1, lambda: trees_hit(lines=trees_map, right=3, down=1)))
+    print(format_solution(2, lambda: scan_slopes(lines=trees_map)))
