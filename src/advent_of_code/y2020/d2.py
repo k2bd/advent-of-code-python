@@ -1,5 +1,7 @@
 from typing import Callable, List
 
+from advent_of_code.util import puzzle_input
+
 
 def is_valid_p1(entry: str) -> bool:
     policy, password = entry.split(": ")
@@ -24,11 +26,7 @@ def solve(passwords: List[str], validator: Callable[[str], bool]) -> int:
 
 
 if __name__ == "__main__":
-    import os
-
-    data_file = os.path.join(os.path.dirname(__file__), "data", "day2.dat")
-
-    with open(data_file, "r") as f:
+    with puzzle_input(2020, 2) as f:
         passwords = f.readlines()
 
     print(f"Part 1: {solve(passwords=passwords, validator=is_valid_p1)!r}")

@@ -1,5 +1,7 @@
 from typing import List
 
+from advent_of_code.util import puzzle_input
+
 
 def trees_hit(lines: List[str], right: int, down: int) -> int:
     pos_x = 0
@@ -22,7 +24,7 @@ def trees_hit(lines: List[str], right: int, down: int) -> int:
     return hit
 
 
-def scan_slopes(lines: List[str]):
+def scan_slopes(lines: List[str]) -> int:
     slopes = [
         (1, 1),
         (3, 1),
@@ -38,11 +40,7 @@ def scan_slopes(lines: List[str]):
 
 
 if __name__ == "__main__":
-    import os
-
-    data_file = os.path.join(os.path.dirname(__file__), "data", "day3.dat")
-
-    with open(data_file, "r") as f:
+    with puzzle_input(2020, 3) as f:
         trees_map = [line.strip() for line in f.readlines()]
 
     print(f"Part 1: {trees_hit(lines=trees_map, right=3, down=1)!r}")

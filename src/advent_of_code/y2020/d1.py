@@ -1,6 +1,8 @@
 from itertools import combinations
 from typing import Iterable, List
 
+from advent_of_code.util import puzzle_input
+
 
 def mul(items: Iterable[int]) -> int:
     result = 1
@@ -17,12 +19,8 @@ def solve(expense_report: List[int], count: int) -> int:
 
 
 if __name__ == "__main__":
-    import os
-
-    data_file = os.path.join(os.path.dirname(__file__), "data", "day1.dat")
-
-    with open(data_file, "r") as f:
+    with puzzle_input(2020, 1) as f:
         expense_report = [int(line) for line in f.readlines()]
 
-    print(f"Part 1: {solve(expense_report=expense_report, count=2)}")
-    print(f"Part 2: {solve(expense_report=expense_report, count=3)}")
+    print(f"Part 1: {solve(expense_report=expense_report, count=2)!r}")
+    print(f"Part 2: {solve(expense_report=expense_report, count=3)!r}")
