@@ -1,6 +1,5 @@
-from contextlib import contextmanager
-from typing import Any, Callable
 from time import perf_counter
+from typing import Any, Callable
 
 from pkg_resources import resource_filename
 
@@ -20,14 +19,15 @@ class Timer:
     def __enter__(self):
         self._start_time = perf_counter()
         return self
-    
+
     def __exit__(self, type, value, traceback):
         self.result_seconds = perf_counter() - self._start_time
 
-def print_solution(part: int, solver: Callable[[], Any]) -> None:
+
+def solution(part: int, solver: Callable[[], Any]) -> str:
     """
-    Print the solution to a puzzle in a standardized way, with timing info
+    Format the solution to a puzzle in a standardized way, with timing info
     """
     with Timer() as t:
         solution = solver()
-    print(f"Part {part!r}: {solution} ({t.result_seconds:.6f} sec)")
+    return f"Part {part!r}: {solution!r} ({t.result_seconds:.6f} sec)"
