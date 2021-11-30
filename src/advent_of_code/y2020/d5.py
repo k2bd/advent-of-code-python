@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List
 
-from advent_of_code.util import puzzle_input
+from advent_of_code.util import print_solution, puzzle_input
 
 KEEP_LOWER_HALF = ["F", "L"]
 KEEP_UPPER_HALF = ["B", "R"]
@@ -58,8 +58,7 @@ def find_my_seat_id(instruction_sets: List[str]) -> int:
 
 
 if __name__ == "__main__":
-    with puzzle_input(2020, 5) as f:
-        instruction_sets = f.readlines()
+    instruction_sets = puzzle_input(2020, 5)
 
-    print(f"Part 1: {get_largest_seat_id(instruction_sets)!r}")
-    print(f"Part 2: {find_my_seat_id(instruction_sets)!r}")
+    print_solution(1, lambda: get_largest_seat_id(instruction_sets))
+    print_solution(2, lambda: find_my_seat_id(instruction_sets))

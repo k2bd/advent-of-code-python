@@ -1,6 +1,6 @@
 from typing import Callable, Dict, Generator, List
 
-from advent_of_code.util import puzzle_input
+from advent_of_code.util import print_solution, puzzle_input
 
 BIRTH_YEAR = "byr"
 ISSUE_YEAR = "iyr"
@@ -111,8 +111,7 @@ def count_valid_passports(
 
 
 if __name__ == "__main__":
-    with puzzle_input(2020, 4) as f:
-        lines = f.readlines()
+    lines = puzzle_input(2020, 4)
 
-    print(f"Part 1: {count_valid_passports(lines, validate_passport_p1)!r}")
-    print(f"Part 2: {count_valid_passports(lines, validate_passport_p2)!r}")
+    print_solution(1, lambda: count_valid_passports(lines, validate_passport_p1))
+    print_solution(2, lambda: count_valid_passports(lines, validate_passport_p2))

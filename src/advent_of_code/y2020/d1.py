@@ -1,7 +1,7 @@
 from itertools import combinations
 from typing import Iterable, List
 
-from advent_of_code.util import puzzle_input
+from advent_of_code.util import print_solution, puzzle_input
 
 
 def mul(items: Iterable[int]) -> int:
@@ -19,8 +19,7 @@ def solve(expense_report: List[int], count: int) -> int:
 
 
 if __name__ == "__main__":
-    with puzzle_input(2020, 1) as f:
-        expense_report = [int(line) for line in f.readlines()]
+    expense_report = [int(line) for line in puzzle_input(2020, 1)]
 
-    print(f"Part 1: {solve(expense_report=expense_report, count=2)!r}")
-    print(f"Part 2: {solve(expense_report=expense_report, count=3)!r}")
+    print_solution(1, lambda: solve(expense_report=expense_report, count=2))
+    print_solution(2, lambda: solve(expense_report=expense_report, count=3))
