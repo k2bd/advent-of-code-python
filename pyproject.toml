@@ -39,16 +39,16 @@ sequence = [
     {shell = "pytest -vv --cov-report=xml --cov=advent_of_code"},
 ]
 
-[tool.poe.tasks.run]
+[tool.poe.tasks.solve]
 cmd = "python -m advent_of_code.y$year.d$day"
-help = "Run the script for a particular day with the puzzle input"
+help = "Run the script for a particular day with my puzzle input"
 
-[tool.poe.tasks.run.args.year]
+[tool.poe.tasks.solve.args.year]
 help = "Advent of Code year"
 default = "2020"
 options = ["-y", "--year"]
 
-[tool.poe.tasks.run.args.day]
+[tool.poe.tasks.solve.args.day]
 help = "Puzzle day"
 default = "1"
 options = ["-d", "--day"]
