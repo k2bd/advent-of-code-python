@@ -113,8 +113,8 @@ def count_valid_passports(
 if __name__ == "__main__":
     lines = puzzle_input(2020, 4)
 
-    solve_p1 = lambda: count_valid_passports(lines, validate_passport_p1)
+    solve_p1 = lambda: count_valid_passports(lines, validate_passport_p1)  # noqa: E731
     print(format_solution(1, solve_p1))
 
-    solve_p2 = lambda: count_valid_passports(lines, validate_passport_p2)
+    solve_p2 = lambda: count_valid_passports(lines, validate_passport_p2)  # noqa: E731
     print(format_solution(2, solve_p2))
