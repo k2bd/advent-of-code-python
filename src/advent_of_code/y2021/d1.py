@@ -25,4 +25,4 @@ if __name__ == "__main__":
     depths = [int(line) for line in puzzle_input(2021, 1)]
 
     print(format_solution(1, lambda: count_increases(depths)))
-    print(format_solution(1, lambda: count_sliding_increases(depths)))
+    print(format_solution(2, lambda: count_sliding_increases(depths)))
