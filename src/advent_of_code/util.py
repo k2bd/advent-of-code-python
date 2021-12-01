@@ -24,10 +24,18 @@ class Timer:
         self.result_seconds = perf_counter() - self._start_time
 
 
-def format_solution(part: int, solver: Callable[[], Any]) -> str:
+def format_part(part: int, solver: Callable[[], Any]) -> str:
     """
-    Format the solution to a puzzle in a standardized way, with timing info
+    Format the solution to a part in a standardized way, with timing info
     """
     with Timer() as t:
         solution = solver()
     return f"Part {part!r}: {solution!r} ({t.result_seconds:.6f} sec)"
+
+
+def format_solution(solver_p1: Callable[[], Any], solver_p2: Callable[[], Any]) -> str:
+    """
+    Format the solutions to both parts of a puzzle in a standardized way,
+    with timing info for each part individually
+    """
+    return "\n".join([format_part(1, solver_p1), format_part(2, solver_p2)])

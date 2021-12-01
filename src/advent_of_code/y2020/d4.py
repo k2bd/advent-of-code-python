@@ -1,6 +1,6 @@
 from typing import Callable, Dict, Generator, List
 
-from advent_of_code.util import format_solution, puzzle_input
+from advent_of_code.util import format_part, puzzle_input
 
 BIRTH_YEAR = "byr"
 ISSUE_YEAR = "iyr"
@@ -114,7 +114,7 @@ if __name__ == "__main__":
     lines = puzzle_input(2020, 4)
 
     solve_p1 = lambda: count_valid_passports(lines, validate_passport_p1)  # noqa: E731
-    print(format_solution(1, solve_p1))
+    print(format_part(1, solve_p1))
 
     solve_p2 = lambda: count_valid_passports(lines, validate_passport_p2)  # noqa: E731
-    print(format_solution(2, solve_p2))
+    print(format_part(2, solve_p2))

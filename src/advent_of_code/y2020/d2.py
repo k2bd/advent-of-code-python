@@ -1,6 +1,6 @@
 from typing import Callable, List
 
-from advent_of_code.util import format_solution, puzzle_input
+from advent_of_code.util import format_part, puzzle_input
 
 
 def is_valid_p1(entry: str) -> bool:
@@ -28,5 +28,5 @@ def solve(passwords: List[str], validator: Callable[[str], bool]) -> int:
 if __name__ == "__main__":
     passwords = puzzle_input(2020, 2)
 
-    print(format_solution(1, lambda: solve(passwords=passwords, validator=is_valid_p1)))
-    print(format_solution(2, lambda: solve(passwords=passwords, validator=is_valid_p2)))
+    print(format_part(1, lambda: solve(passwords=passwords, validator=is_valid_p1)))
+    print(format_part(2, lambda: solve(passwords=passwords, validator=is_valid_p2)))

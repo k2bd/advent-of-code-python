@@ -24,5 +24,8 @@ def count_sliding_increases(depths: List[int]) -> int:
 if __name__ == "__main__":
     depths = [int(line) for line in puzzle_input(2021, 1)]
 
-    print(format_solution(1, lambda: count_increases(depths)))
-    print(format_solution(2, lambda: count_sliding_increases(depths)))
+    solutions = format_solution(
+        solver_p1=lambda: count_increases(depths),
+        solver_p2=lambda: count_sliding_increases(depths),
+    )
+    print(solutions)
