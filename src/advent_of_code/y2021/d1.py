@@ -7,9 +7,7 @@ def count_increases(depths: List[int]) -> int:
     """
     Count the number of times the depth increases between two measurements
     """
-    increases = [
-        second - first for first, second in zip(depths, depths[1:]) if second > first
-    ]
+    increases = [1 for first, second in zip(depths, depths[1:]) if second > first]
     return len(increases)
 
 
