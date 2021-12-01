@@ -21,3 +21,9 @@ For example: `poe solve -y 2020 -d 1`
 (Note: if Poetry is managing a virtual environment for you, you may need to use `poetry run poe` instead of just `poe`)
 
 <!--- advent_readme_stars table --->
+## 2021 Results
+
+| Day | Part 1 | Part 2 |
+| :---: | :---: | :---: |
+| [Day 1](https://adventofcode.com/2021/day/1) | ⭐ | ⭐ |
+<!--- advent_readme_stars table --->
