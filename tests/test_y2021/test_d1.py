@@ -17,5 +17,6 @@ TEST_INPUT = [
 def test_d1_p1():
     assert count_increases(TEST_INPUT) == 7
 
+
 def test_d1_p2():
     assert count_sliding_increases(TEST_INPUT) == 5
