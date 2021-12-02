@@ -9,5 +9,6 @@ TEST_INPUT = [
     "forward 2",
 ]
 
+
 def test_d2_p1():
     assert get_position(TEST_INPUT) == Position(horizontal=15, depth=10)

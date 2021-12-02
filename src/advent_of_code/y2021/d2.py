@@ -1,6 +1,7 @@
-from typing import List
-from advent_of_code.util import puzzle_input, format_solution
 from dataclasses import dataclass
+from typing import List
+
+from advent_of_code.util import format_solution, puzzle_input
 
 
 @dataclass(eq=True)
@@ -28,6 +29,7 @@ def get_position(instructions: List[str]) -> Position:
 
     return result
 
+
 def p1_result(instructions: List[str]) -> int:
     position = get_position(instructions)
     return position.depth * position.horizontal
@@ -36,4 +38,8 @@ def p1_result(instructions: List[str]) -> int:
 if __name__ == "__main__":
     instructions = puzzle_input(2021, 2)
 
-    print(format_solution(solver_p1=lambda: p1_result(instructions), solver_p2=lambda: None))
+    print(
+        format_solution(
+            solver_p1=lambda: p1_result(instructions), solver_p2=lambda: None
+        )
+    )
