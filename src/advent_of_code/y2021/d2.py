@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List
+from typing import Callable, List
 
 from advent_of_code.util import format_solution, puzzle_input
 
@@ -10,11 +10,13 @@ class Position:
 
     depth: int
 
+    aim: int = 0
 
-def get_position(instructions: List[str]) -> Position:
+
+def get_position_p1(instructions: List[str]) -> Position:
     """
     Get the position of the sub, starting at 0, 0, after the following
-    instructions
+    instructions according to the part 1 rules
     """
     result = Position(horizontal=0, depth=0)
 
@@ -30,8 +32,31 @@ def get_position(instructions: List[str]) -> Position:
     return result
 
 
-def p1_result(instructions: List[str]) -> int:
-    position = get_position(instructions)
+def get_position_p2(instructions: List[str]) -> Position:
+    """
+    Get the position of the sub, starting at 0, 0, after the following
+    instructions according to the part 2 rules
+    """
+    result = Position(horizontal=0, depth=0)
+
+    for instruction in instructions:
+        direction, amount = instruction.split()
+        if direction == "forward":
+            result.horizontal += int(amount)
+            result.depth += result.aim * int(amount)
+        elif direction == "down":
+            result.aim += int(amount)
+        elif direction == "up":
+            result.aim -= int(amount)
+
+    return result
+
+
+def result(
+    instructions: List[str],
+    instruction_resolver: Callable[[List[str]], Position],
+) -> int:
+    position = instruction_resolver(instructions)
     return position.depth * position.horizontal
 
 
@@ -40,6 +65,11 @@ if __name__ == "__main__":
 
     print(
         format_solution(
-            solver_p1=lambda: p1_result(instructions), solver_p2=lambda: None
+            solver_p1=lambda: result(
+                instructions, instruction_resolver=get_position_p1
+            ),
+            solver_p2=lambda: result(
+                instructions, instruction_resolver=get_position_p2
+            ),
         )
     )
