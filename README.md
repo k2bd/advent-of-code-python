@@ -1,8 +1,8 @@
 # Advent of Code
 
-![](https://img.shields.io/badge/day%20📅-2-blue)
-![](https://img.shields.io/badge/stars%20⭐-3-yellow)
-![](https://img.shields.io/badge/days%20completed-1-red)
+![](https://img.shields.io/badge/day%20📅-3-blue)
+![](https://img.shields.io/badge/stars%20⭐-5-yellow)
+![](https://img.shields.io/badge/days%20completed-2-red)
 
 [![CI](https://github.com/k2bd/advent-of-code/actions/workflows/ci.yml/badge.svg)](https://github.com/k2bd/advent-of-code/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/k2bd/advent-of-code/branch/main/graph/badge.svg?token=Q4VWZ3FKEC)](https://codecov.io/gh/k2bd/advent-of-code)
@@ -26,5 +26,5 @@ For example: `poe solve -y 2020 -d 1`
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---: |
 | [Day 1](https://adventofcode.com/2021/day/1) | ⭐ | ⭐ |
-| [Day 2](https://adventofcode.com/2021/day/2) | ⭐ |   |
+| [Day 2](https://adventofcode.com/2021/day/2) | ⭐ | ⭐ |
 <!--- advent_readme_stars table --->
