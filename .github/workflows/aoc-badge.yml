@@ -16,7 +16,7 @@ jobs:
         with:
           userid: 1511815 # your user id, see setup on how to obtain
           session: ${{ secrets.AOC_SESSION }} # secret containing session code, see setup on how to obtain
-          year: 2021
+          year: 2023
       - uses: stefanzweifel/git-auto-commit-action@v4 # Step that pushes these local changes back to your github repo
         with:
           commit_message: Update badges
