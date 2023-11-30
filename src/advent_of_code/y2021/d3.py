@@ -58,8 +58,8 @@ def solve_p1(report: List[str]) -> int:
 
 
 def solve_p2(report: List[str]) -> int:
-    return get_rating(report, get_most_common_bits) * get_rating(
-        report, get_least_common_bits
+    return (get_rating(report, get_most_common_bits) or 0) * (
+        get_rating(report, get_least_common_bits) or 0
     )
 
 
