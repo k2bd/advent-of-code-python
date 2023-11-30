@@ -12,10 +12,12 @@ pytest = "^5.2"
 black = "^21.11b1"
 isort = "^5.10.1"
 flake8 = "^4.0.1"
-mypy = "^0.910"
 pytest-cov = "^3.0.0"
 poethepoet = "^0.11.0"
 types-setuptools = "^57.4.4"
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.338"
 
 [tool.isort]
 profile = "black"
@@ -31,7 +33,7 @@ lint.sequence = [
     {cmd = "black --check -v src tests"},
     {cmd = "isort --check -v src tests"},
     {cmd = "flake8 src tests"},
-    {cmd = "mypy --pretty src tests"},
+    {cmd = "pyright src tests"},
 ]
 
 [tool.poe.tasks.test]
