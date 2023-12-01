@@ -5,7 +5,8 @@ description = ""
 authors = ["Kevin Duff <kevinkelduff@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.8, <4"
+python = ">=3.9, <4"
+advent-of-code-data = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.2.5"
@@ -16,6 +17,7 @@ pytest-cov = "^3.0.0"
 poethepoet = "^0.11.0"
 types-setuptools = "^57.4.4"
 pyright = "^1.1.338"
+typer = "^0.9.0"
 
 [tool.isort]
 profile = "black"
@@ -23,21 +25,19 @@ multi_line_output = 3
 
 [tool.poe.tasks]
 autoformat.sequence = [
-    {cmd = "black src tests"},
-    {cmd = "isort src tests"},
+    {cmd = "black src tests scripts"},
+    {cmd = "isort src tests scripts"},
 ]
 
 lint.sequence = [
-    {cmd = "black --check -v src tests"},
-    {cmd = "isort --check -v src tests"},
-    {cmd = "flake8 src tests"},
-    {cmd = "pyright src tests"},
+    {cmd = "black --check -v src tests scripts"},
+    {cmd = "isort --check -v src tests scripts"},
+    {cmd = "flake8 src tests scripts"},
+    {cmd = "pyright src tests scripts"},
 ]
 
 [tool.poe.tasks.test]
-sequence = [
-    {shell = "pytest -vv --cov=advent_of_code --cov-report term --cov-report xml"},
-]
+cmd = "pytest -vv --cov=advent_of_code --cov-report term --cov-report xml"
 
 [tool.poe.tasks.solve]
 cmd = "python -m advent_of_code.y$year.d$day"
@@ -45,13 +45,23 @@ help = "Run the script for a particular day with my puzzle input"
 
 [tool.poe.tasks.solve.args.year]
 help = "Advent of Code year"
-default = "2020"
-options = ["-y", "--year"]
+positional = true
 
 [tool.poe.tasks.solve.args.day]
 help = "Puzzle day"
-default = "1"
-options = ["-d", "--day"]
+positional = true
+
+[tool.poe.tasks.get-input]
+cmd = "python scripts/get_input.py $year $day"
+help = "Get puzzle input for a given day"
+
+[tool.poe.tasks.get-input.args.year]
+help = "Advent of Code year"
+positional = true
+
+[tool.poe.tasks.get-input.args.day]
+help = "Puzzle day"
+positional = true
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
