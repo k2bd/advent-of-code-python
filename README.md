@@ -30,7 +30,6 @@ You must have the `AOC_SESSION` or `AOCD_DIR` environment variables set for this
 For more information see [advent-of-code-data](https://pypi.org/project/advent-of-code-data/).
 
 <!--- advent_readme_stars table --->
-
 ## 2023 Results
 
 | Day | Part 1 | Part 2 |
