@@ -1,8 +1,8 @@
 # Advent of Code
 
 ![](https://img.shields.io/badge/day%20📅-2-blue)
-![](https://img.shields.io/badge/stars%20⭐-2-yellow)
-![](https://img.shields.io/badge/days%20completed-1-red)
+![](https://img.shields.io/badge/stars%20⭐-4-yellow)
+![](https://img.shields.io/badge/days%20completed-2-red)
 
 [![CI](https://github.com/k2bd/advent-of-code/actions/workflows/ci.yml/badge.svg)](https://github.com/k2bd/advent-of-code/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/k2bd/advent-of-code-python/graph/badge.svg?token=Q4VWZ3FKEC)](https://codecov.io/gh/k2bd/advent-of-code-python)
