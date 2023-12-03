@@ -1,7 +1,8 @@
 from time import perf_counter
 from typing import Any, Callable
+import os
 
-from pkg_resources import resource_filename
+from advent_of_code import __file__ as AOC_BASE
 
 
 def puzzle_input(year: int, day: int):
@@ -9,7 +10,7 @@ def puzzle_input(year: int, day: int):
     Open a puzzle's input file, which should be saved under
     ``advent_of_code/y{year}/data/day{day}``
     """
-    location = resource_filename("advent_of_code", f"y{year}/data/day{day}")
+    location = os.path.join(os.path.dirname(AOC_BASE), f"y{year}", "data", f"day{day}")
     with open(location, "r", encoding="utf-8") as f:
         lines = f.readlines()
     return [line.strip() for line in lines]
