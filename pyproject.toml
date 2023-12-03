@@ -51,18 +51,15 @@ positional = true
 help = "Puzzle day"
 positional = true
 
-[tool.poe.tasks.setup]
-sequence = [
-    {cmd = "python scripts/boilerplate.py $year $day"},
-    "get-input $year $day",
-]
+[tool.poe.tasks.boiler]
+cmd = "python scripts/boilerplate.py $year $day"
 help = "Prepare boilerplate for a given day"
 
-[tool.poe.tasks.setup.args.year]
+[tool.poe.tasks.boiler.args.year]
 help = "Advent of Code year"
 positional = true
 
-[tool.poe.tasks.setup.args.day]
+[tool.poe.tasks.boiler.args.day]
 help = "Puzzle day"
 positional = true
 

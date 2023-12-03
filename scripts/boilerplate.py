@@ -7,7 +7,7 @@ from typer import confirm
 from advent_of_code import __file__ as aoc_dir
 
 PACKAGE_DIR = os.path.dirname(aoc_dir)
-TESTS_DIR = os.path.join(os.path.dirname(PACKAGE_DIR), "tests")
+TESTS_DIR = os.path.join(os.path.dirname(os.path.dirname(PACKAGE_DIR)), "tests")
 
 
 PACKAGE_BOILERPLATE = """from advent_of_code.util import format_solution, puzzle_input
@@ -15,11 +15,11 @@ PACKAGE_BOILERPLATE = """from advent_of_code.util import format_solution, puzzle
 
 def part_1(input: list[str]) -> int:
     pass
-    
+
 
 def part_2(input: list[str]) -> int:
     pass
-    
+
 
 if __name__ == "__main__":
     puzzle = puzzle_input({year}, {day})
@@ -30,11 +30,11 @@ if __name__ == "__main__":
             solver_p2=lambda: part_2(puzzle),
         )
     )
-
 """
 
 
 TEST_BOILERPLATE = """from advent_of_code.y{year}.d{day} import part_1, part_2
+
 
 TEST_INPUT = []
 
@@ -56,7 +56,6 @@ def test_boilerplate(year: int, day: int) -> str:
 
 
 def main(year: int, day: int):
-
     package_file = os.path.join(PACKAGE_DIR, f"y{year}", f"d{day}.py")
     os.makedirs(os.path.dirname(package_file), exist_ok=True)
     test_file = os.path.join(TESTS_DIR, f"test_y{year}", f"test_d{day}.py")
