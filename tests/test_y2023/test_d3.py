@@ -1,14 +1,6 @@
 import pytest
-from advent_of_code.y2023.d3 import (
-    Coord,
-    parse_engine_schematic,
-    part_1,
-    _parse_line,
-    part_2,
-    Engine,
-    _parse_item,
-)
 
+from advent_of_code.y2023.d3 import Coord, _parse_item, _parse_line, part_1, part_2
 
 EXAMPLE_INPUT = [
     "467..114..",
@@ -98,7 +90,7 @@ def test_parse_item(
     item: str,
     y: int,
     start_x: int,
-    expected_result: tuple[list[tuple[int, set[Coord]], list[tuple[str, Coord]]]],
+    expected_result: tuple[list[tuple[int, set[Coord]]], list[tuple[str, Coord]]],
 ):
     assert _parse_item(item, y=y, start_x=start_x) == expected_result
 
@@ -159,7 +151,7 @@ def test_parse_item(
 def test_parse_line(
     line: str,
     y: int,
-    expected: tuple[list[tuple[int, set[Coord]], list[tuple[str, Coord]]]],
+    expected: tuple[list[tuple[int, set[Coord]]], list[tuple[str, Coord]]],
 ):
     assert _parse_line(line, y=y) == expected
 

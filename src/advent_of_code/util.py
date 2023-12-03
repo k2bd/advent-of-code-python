@@ -1,6 +1,6 @@
+import os
 from time import perf_counter
 from typing import Any, Callable
-import os
 
 from advent_of_code import __file__ as AOC_BASE
 

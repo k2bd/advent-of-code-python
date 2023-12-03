@@ -1,5 +1,7 @@
-from advent_of_code.util import format_solution, puzzle_input
 from dataclasses import dataclass
+
+from advent_of_code.util import format_solution, puzzle_input
+
 
 @dataclass(frozen=True, eq=True)
 class Coord:
@@ -37,9 +39,25 @@ class Engine:
 
         return result
 
+    def total_gear_ratio(self) -> int:
+        possible_gears = [sym for sym in self.symbols if sym[0] == "*"]
+
+        result = 0
+
+        for _, gear_coord in possible_gears:
+            neighbor_coords = gear_coord.neighbors()
+
+            neighbor_numbers = [
+                num for num, coords in self.numbers if coords & neighbor_coords
+            ]
+            if len(neighbor_numbers) == 2:
+                result += neighbor_numbers[0] * neighbor_numbers[1]
+
+        return result
+
 
 def _is_numerical(item: str) -> bool:
-    #if "+" in item or "-" in item:
+    # if "+" in item or "-" in item:
     #    return False
     try:
         int(item)
@@ -52,7 +70,7 @@ def _parse_item(
     item: str,
     y: int,
     start_x: int,
-) -> tuple[list[tuple[int, set[Coord]], list[tuple[str, Coord]]]]:
+) -> tuple[list[tuple[int, set[Coord]]], list[tuple[str, Coord]]]:
     """
     Process an item in the engine schematic, separating numbers and parts that
     appear together, e.g "617*"
@@ -95,7 +113,7 @@ def _parse_item(
 
 def _parse_line(
     line: str, y: int
-) -> tuple[list[tuple[int, set[Coord]], list[tuple[str, Coord]]]]:
+) -> tuple[list[tuple[int, set[Coord]]], list[tuple[str, Coord]]]:
     numbers = []
     symbols = []
 
@@ -142,7 +160,9 @@ def part_1(schematic: list[str]) -> int:
 
 
 def part_2(schematic: list[str]) -> int:
-    pass
+    engine = parse_engine_schematic(schematic)
+
+    return engine.total_gear_ratio()
 
 
 if __name__ == "__main__":
