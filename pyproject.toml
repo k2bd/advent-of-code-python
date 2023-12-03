@@ -51,6 +51,18 @@ positional = true
 help = "Puzzle day"
 positional = true
 
+[tool.poe.tasks.boiler]
+cmd = "python scripts/boilerplate.py $year $day"
+help = "Prepare boilerplate for a given day"
+
+[tool.poe.tasks.boiler.args.year]
+help = "Advent of Code year"
+positional = true
+
+[tool.poe.tasks.boiler.args.day]
+help = "Puzzle day"
+positional = true
+
 [tool.poe.tasks.get-input]
 cmd = "python scripts/get_input.py $year $day"
 help = "Get puzzle input for a given day"

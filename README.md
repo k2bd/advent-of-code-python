@@ -14,11 +14,13 @@ Install [Poetry](https://python-poetry.org/docs/) and `poetry install` the proje
 
 ## Running
 
-To run a particular puzzle, use `poe solve` followed by year and day.
-
-For example: `poe solve 2020 1`
-
 (Note: if Poetry is managing a virtual environment for you, you may need to use `poetry run poe` instead of just `poe`)
+
+### Setting up boilerplate
+
+Set up some boilerplate for a day using `poe boiler`.
+
+For example: `poe boiler 2020 1`
 
 ## Getting test input
 
@@ -28,6 +30,12 @@ For example: `poe get-input 2020 1`
 
 You must have the `AOC_SESSION` or `AOCD_DIR` environment variables set for this to work.
 For more information see [advent-of-code-data](https://pypi.org/project/advent-of-code-data/).
+
+### Getting a solution
+
+To run a particular puzzle, use `poe solve` followed by year and day.
+
+For example: `poe solve 2020 1`
 
 <!--- advent_readme_stars table --->
 ## 2023 Results
