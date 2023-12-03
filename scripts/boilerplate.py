@@ -38,6 +38,7 @@ TEST_BOILERPLATE = """from advent_of_code.y{year}.d{day} import part_1, part_2
 
 TEST_INPUT = []
 
+
 def test_part_1():
     assert part_1(TEST_INPUT) == 0
 
