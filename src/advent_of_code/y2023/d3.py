@@ -57,8 +57,6 @@ class Engine:
 
 
 def _is_numerical(item: str) -> bool:
-    # if "+" in item or "-" in item:
-    #    return False
     try:
         int(item)
         return True
