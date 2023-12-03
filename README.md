@@ -22,7 +22,7 @@ Set up some boilerplate for a day using `poe boiler`.
 
 For example: `poe boiler 2020 1`
 
-## Getting test input
+### Getting test input
 
 To get the test input for a particular puzzle, use `poe get-input` followed by year and day.
 
