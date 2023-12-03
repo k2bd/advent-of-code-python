@@ -1,7 +1,6 @@
 import os
 
 import typer
-from aocd import get_data
 from typer import confirm
 
 from advent_of_code import __file__ as aoc_dir
