@@ -1,5 +1,4 @@
-from advent_of_code.y2023.d5 import part_1, part_2, AlmanacMap
-
+from advent_of_code.y2023.d5 import AlmanacMap, part_1, part_2
 
 TEST_INPUT = [
     "seeds: 79 14 55 13",
@@ -42,5 +41,15 @@ def test_part_1():
     assert part_1(TEST_INPUT) == 35
 
 
+def test_transform_range():
+    almanac = AlmanacMap()
+    almanac.set_key_range(3, 13, 6)
+    almanac.set_key_range(11, 31, 3)
+
+    transformed = almanac.transform_range(7, 6)
+
+    assert transformed == [(17, 2), (31, 2), (9, 2)]
+
+
 def test_part_2():
-    assert part_2(TEST_INPUT) == 0
+    assert part_2(TEST_INPUT) == 46
