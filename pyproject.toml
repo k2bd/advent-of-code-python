@@ -10,7 +10,7 @@ advent-of-code-data = "^2.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7"
-black = "^22.3.0"
+black = ">=22.3,<25.0"
 isort = "^5.10.1"
 flake8 = "^4.0.1"
 pytest-cov = "^3.0.0"
